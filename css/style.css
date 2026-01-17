@@ -1,8 +1,29 @@
 @import "normalize.css";
 
+:root {
+    --space-l: 40px;
+    --brand-900: #bf7506;
+    --brand-500: #dd9c3c;
+    --brand-100: #f4debe;
+    --neutral-900: #211b12;
+    --neutral-500: #83807c;
+    --neutral-100: #e0dedc;
+}
+
+
 body {
     background-color: #ffffff;
     font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: 870px;
+    width: 100%;
+    margin: auto;
+}
+
+.container+.container {
+    margin-top: var(--space-l);
 }
 
 .navbar {
@@ -14,6 +35,10 @@ body {
     justify-content: space-between;
 }
 
+.navbar-logo {
+    margin-left: 11px;
+}
+
 .nav-list {
     display: flex;
     align-items: center;
@@ -23,7 +48,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #BF7506;
+    color: var(--brand-900);
     font-weight: 400;
     font-size: 16px;
     font-weight: 400;
@@ -33,4 +58,210 @@ body {
 
 .nav-link.active {
     font-weight: 700;
+}
+
+.header-photo {
+    background: #ffffff;
+}
+
+.header-photo img {
+    /* mask-image: radial-gradient(circle, #000 60%, transparent 100%); */
+    width: 240px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 0;
+}
+
+.header-text {
+    margin-left: 27px;
+    color: var(--neutral-900);
+}
+
+.header-strong {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 125%;
+    color: var(--neutral-900);
+}
+
+.header-heading {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 135%;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #211b12;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.header-primary {
+    color: var(--brand-900);
+}
+
+.social-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 8px;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.cv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    margin-left: 55px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #211b12;
+    border-bottom: 2px solid var(--brand-900);
+}
+
+.cv-icon {
+    /* margin-right: 4px; */
+}
+
+.cv-text {
+    /* display: inline-block;
+    margin-left: 4px; */
+}
+
+.cards {
+    display: flex;
+    align-items: flex-start;
+    justify-self: space-between;
+    gap: 72px
+}
+
+.card {
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 4x;
+}
+
+.card-image:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    display: block;
+}
+
+.card-text-wrapper {
+    margin-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+}
+
+.section-heading {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: var(--brand-900);
+}
+
+.section-subtitle {
+    margin-top: 8px;
+    margin-bottom: 32px;
+
+    max-width: 520px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--neutral-500);
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 135%;
+    letter-spacing: -0.02em;
+    color: var(--brand-900);
+}
+
+.tags {
+    margin-top: 8px;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tags-item {
+    background: #ffffff;
+    border: 1px solid var(--brand-500);
+    border-radius: 4px;
+}
+
+.tags-link {
+    padding: 4px 8px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--neutral-900);
+}
+
+.tags-link:hover,
+.tags-link:focus {
+    color: var(--brand-500);
+}
+
+.tags-item:hover {
+    background: var(--brand-100);
+}
+
+.card-text {
+    font-weight: 400;
+    margin-top: 16px;
+    line-height: 150%;
+    color: var(--neutral-900);
+}
+
+.card-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 25px;
+
+}
+
+.card-button {
+    display: flex;
+    align-items: center;
+    padding: 7px 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--neutral-900);
+    border-bottom: 2px solid var(--brand-900);
+}
+
+.card-button-text {
+    display: inline-block;
+    margin-left: 4px;
 }
