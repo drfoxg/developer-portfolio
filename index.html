@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <!-- База -->
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Основной JS -->
-    <!-- <script defer src="js/main.js"></script> -->
+    <script defer src="js/main.js"></script>
 
     <!-- Доп. модули -->
     <script defer src="js/footer.js"></script>
@@ -108,16 +108,22 @@
       <nav class="navigation">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="#" class="nav-link active">Главная</a>
+            <a href="#main" class="nav-link active">Главная</a>
           </li>
-          <li class="nav-item"><a href="#" class="nav-link">Проекты</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Обо мне</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Связаться</a></li>
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link">Проекты</a>
+          </li>
+          <li class="nav-item">
+            <a href="#developer" class="nav-link">Обо мне</a>
+          </li>
+          <li class="nav-item">
+            <a href="#feedback" class="nav-link">Связаться</a>
+          </li>
         </ul>
       </nav>
     </div>
     <!-- ./navbar -->
-    <header class="header container">
+    <header class="header container" id="main">
       <div class="header-photo">
         <img
           src="img/memoji.png"
@@ -176,7 +182,7 @@
               /></a>
             </li>
           </ul>
-          <a href="#" class="cv-download" download>
+          <a href="doc/cv.pdf" class="cv-download" download>
             <img
               src="img/icons/download.svg"
               alt="download-icon"
@@ -190,99 +196,96 @@
       <!-- /.header-text -->
     </header>
     <!-- /.header -->
-    <section class="portfolio">
-      <div class="container">
-        <h2 class="section-heading">Мои последние проекты</h2>
-        <p class="section-subtitle">Подборка работ за 2024–2025 годы</p>
-        <div class="cards">
-          <div class="card">
-            <img
-              src="img/portfolio/image 1.jpg"
-              alt="Мобильное приложение"
-              class="card-image"
-            />
-            <div class="card-text-wrapper">
-              <div class="card-title">Мобильное приложение</div>
-              <ul class="tags">
-                <li class="tags-item">
-                  <a href="#" class="tags-link">HTML</a>
-                </li>
-                <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
-                <li class="tags-item">
-                  <a href="#" class="tags-link">JavaScript</a>
-                </li>
-                <li class="tags-item"><a href="" class="tags-link">Git</a></li>
-                <li class="tags-item">
-                  <a href="#" class="tags-link">Vitejs</a>
-                </li>
-              </ul>
-              <p class="card-text">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim id est laborum.
-              </p>
-              <div class="card-buttons">
-                <a href="#" class="card-button"
-                  ><img
-                    src="img/icons/code.svg"
-                    alt="code icon"
-                    class="card-button-icon"
-                  /><span class="card-button-text">Код</span></a
-                ><a href="#" class="card-button"
-                  ><img
-                    src="img/icons/demo.svg"
-                    alt="demo icon"
-                    class="card-button-icon"
-                  /><span class="card-button-text">Демо</span></a
-                >
-              </div>
+    <section class="portfolio container" id="portfolio">
+      <h2 class="section-heading">Мои последние проекты</h2>
+      <p class="section-subtitle">Подборка работ за 2024–2025 годы</p>
+      <div class="cards">
+        <div class="card">
+          <img
+            src="img/portfolio/image 1.jpg"
+            alt="Мобильное приложение"
+            class="card-image"
+          />
+          <div class="card-text-wrapper">
+            <div class="card-title">Мобильное приложение</div>
+            <ul class="tags">
+              <li class="tags-item">
+                <a href="#" class="tags-link">HTML</a>
+              </li>
+              <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
+              <li class="tags-item">
+                <a href="#" class="tags-link">JavaScript</a>
+              </li>
+              <li class="tags-item"><a href="" class="tags-link">Git</a></li>
+              <li class="tags-item">
+                <a href="#" class="tags-link">Vitejs</a>
+              </li>
+            </ul>
+            <p class="card-text">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="card-buttons">
+              <a href="#" class="card-button"
+                ><img
+                  src="img/icons/code.svg"
+                  alt="code icon"
+                  class="card-button-icon"
+                /><span class="card-button-text">Код</span></a
+              ><a href="#" class="card-button"
+                ><img
+                  src="img/icons/demo.svg"
+                  alt="demo icon"
+                  class="card-button-icon"
+                /><span class="card-button-text">Демо</span></a
+              >
             </div>
-            <!-- /.card-text-wrapper -->
           </div>
-          <!-- /.card -->
-          <div class="card">
-            <img
-              src="img/portfolio/image 2.jpg"
-              alt="Мобильное приложение"
-              class="card-image"
-            />
-            <div class="card-text-wrapper">
-              <div class="card-title">Одностраничный промо-сайт</div>
-              <ul class="tags">
-                <li class="tags-item">
-                  <a href="#" class="tags-link">HTML</a>
-                </li>
-                <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
-              </ul>
-              <p class="card-text">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim id est laborum.
-              </p>
-              <div class="card-buttons">
-                <a href="#" class="card-button"
-                  ><img
-                    src="img/icons/code.svg"
-                    alt="code icon"
-                    class="card-button-icon"
-                  /><span class="card-button-text">Код</span></a
-                ><a href="#" class="card-button"
-                  ><img
-                    src="img/icons/demo.svg"
-                    alt="demo icon"
-                    class="card-button-icon"
-                  /><span class="card-button-text">Демо</span></a
-                >
-              </div>
-            </div>
-            <!-- /.card-text-wrapper -->
-          </div>
-          <!-- /.card -->
+          <!-- /.card-text-wrapper -->
         </div>
-        <!-- /.cards -->
+        <!-- /.card -->
+        <div class="card">
+          <img
+            src="img/portfolio/image 2.jpg"
+            alt="Мобильное приложение"
+            class="card-image"
+          />
+          <div class="card-text-wrapper">
+            <div class="card-title">Одностраничный промо-сайт</div>
+            <ul class="tags">
+              <li class="tags-item">
+                <a href="#" class="tags-link">HTML</a>
+              </li>
+              <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
+            </ul>
+            <p class="card-text">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="card-buttons">
+              <a href="#" class="card-button"
+                ><img
+                  src="img/icons/code.svg"
+                  alt="code icon"
+                  class="card-button-icon"
+                /><span class="card-button-text">Код</span></a
+              ><a href="#" class="card-button"
+                ><img
+                  src="img/icons/demo.svg"
+                  alt="demo icon"
+                  class="card-button-icon"
+                /><span class="card-button-text">Демо</span></a
+              >
+            </div>
+          </div>
+          <!-- /.card-text-wrapper -->
+        </div>
+        <!-- /.card -->
       </div>
-      <!-- /.container -->
+      <!-- /.cards -->
     </section>
     <!-- /.portfolio -->
-    <section class="developer container">
+    <section class="developer container" id="developer">
       <div class="developer-photo-wrapper">
         <img
           src="img/anatoliy-borisov-fullstack-developer.jpg"
@@ -314,7 +317,7 @@
       <!-- /.dveloper-about -->
     </section>
     <!-- /.developer container -->
-    <section class="skills container">
+    <section class="skills container" id="skills">
       <h2 class="skills-title">Работаю с разными языками и инструментами</h2>
       <ul class="tags">
         <li class="tags-item">
@@ -330,12 +333,14 @@
         <li class="tags-item"><a href="#" class="tags-link">Laravel</a></li>
         <li class="tags-item"><a href="#" class="tags-link">PostgreSQL</a></li>
         <li class="tags-item"><a href="#" class="tags-link">Docker</a></li>
+        <li class="tags-item">
+          <a href="#" class="tags-link">Ci/Сd</a>
+        </li>
         <li class="tags-item"><a href="#" class="tags-link">Kubernetes</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">Ci/Сd</a></li>
       </ul>
     </section>
     <!-- /.skills container -->
-    <section class="feedback form-container">
+    <section class="feedback form-container" id="feedback">
       <h2 class="feedback-title">Готов обсудить проект...</h2>
       <form action="#" class="feedback-form">
         <div class="input-group">
