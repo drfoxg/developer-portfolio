@@ -1,17 +1,106 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <!-- База -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Анатолий Борисов - fullstack разработчик</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
+    <title>Анатолий Борисов — Full-stack разработчик</title>
+    <meta
+      name="description"
+      content="Разработка веб-приложений: PHP, Laravel, Vue, DevOps."
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Анатолий Борисов — Full-stack разработка"
+    />
+    <meta
+      property="og:description"
+      content="PHP, Laravel, Vue, DevOps. Создание и поддержка веб-приложений."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fiontech.ru" />
+    <meta property="og:image" content="img/og-fiontech.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Основной JS -->
+    <!-- <script defer src="js/main.js"></script> -->
+
+    <!-- Доп. модули -->
+    <script defer src="js/footer.js"></script>
+
+    <!-- Schema.org (JSON-LD) — это не JS-логика. -->
+    <!-- Её НЕ нужно выносить в .js файл. -->
+    <!-- Google не гарантирует обработку JSON-LD, подгруженного через defer/async из внешнего JS. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://fiontech.ru/#person",
+            "name": "Анатолий Борисов",
+            "jobTitle": "Full-stack разработчик",
+            "url": "https://fiontech.ru",
+            "sameAs": [
+              "https://github.com/drfoxg",
+              "https://linkedin.com/in/username"
+            ],
+            "knowsAbout": [
+              "PHP",
+              "Laravel",
+              "Vue.js",
+              "REST API",
+              "Docker",
+              "MySQL",
+              "PostgreSQL"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fiontech.ru/#website",
+            "url": "https://fiontech.ru",
+            "name": "Fiontech — Full-stack разработка",
+            "publisher": {
+              "@id": "https://fiontech.ru/#person"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://fiontech.ru/#service-backend",
+            "name": "Backend-разработка",
+            "provider": {
+              "@id": "https://fiontech.ru/#person"
+            },
+            "areaServed": "Worldwide",
+            "serviceType": "Web Development",
+            "description": "Разработка и поддержка backend-приложений на PHP, Laravel, REST API."
+          }
+        ]
+      }
+    </script>
+
+    <!-- Аналитика (async!) -->
+    <!-- Яндекс.Метрика или Gogole Analytics здесь -->
   </head>
   <body>
     <div class="navbar container">
@@ -40,7 +129,7 @@
       <div class="header-text">
         <strong class="header-strong">Привет 👋</strong>
         <h1 class="header-heading">
-          <span class="header-primary">Я фуллстек-разработчик и DevOps</span
+          <span class="header-primary">Я Full-stack разработчик и DevOps</span
           ><br />
           Меня зовут Анатолий Борисов и я делаю сайты для людей и компаний
         </h1>
@@ -193,5 +282,96 @@
       <!-- /.container -->
     </section>
     <!-- /.portfolio -->
+    <section class="developer container">
+      <div class="developer-photo-wrapper">
+        <img
+          src="img/anatoliy-borisov-fullstack-developer.jpg"
+          alt="Анатолий
+      Борисов фуллстек разработчик"
+          class="developer-photo"
+        />
+      </div>
+      <div class="developer-about">
+        <span class="developer-hello">Рад вас видеть</span>
+        <h2 class="developer-title">Я Анатолий Борисов</h2>
+        <p class="developer-text">
+          Я разрабатываю сайты для людей и компаний. Делаю почти всё сам:
+          составляю прототип, дизайн-макет от проверенного дизайнера или бережно
+          работаю с вашим, пишу код, масштабирую проект под нагрузку.
+        </p>
+        <span class="motto">Код, Администрирование, Обучение</span>
+        <p class="developer-text">
+          Могу собрать страницу для вашей компании, даже если запускать её нужно
+          уже завтра. Из инструментов есть: Tilda, Laravel, Vue 3, Docker,
+          Kubernetes, Figma, HTML, CSS, JavaScript и Wordpress
+        </p>
+        <img
+          src="img/sign.png"
+          alt="Подпись: Анатолий Борисов"
+          class="developer-sign"
+        />
+      </div>
+      <!-- /.dveloper-about -->
+    </section>
+    <!-- /.developer container -->
+    <section class="skills container">
+      <h2 class="skills-title">Работаю с разными языками и инструментами</h2>
+      <ul class="tags">
+        <li class="tags-item">
+          <a href="#" class="tags-link">HTML</a>
+        </li>
+        <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">TypeScript</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">PHP</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">SQL</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">Wordpress</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">npm</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">Vue.js</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">Laravel</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">PostgreSQL</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">Docker</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">Kubernetes</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">Ci/Сd</a></li>
+      </ul>
+    </section>
+    <!-- /.skills container -->
+    <section class="feedback form-container">
+      <h2 class="feedback-title">Готов обсудить проект...</h2>
+      <form action="#" class="feedback-form">
+        <div class="input-group">
+          <label for="username" class="input-label">Имя</label>
+          <input id="username" name="username" type="text" class="input" />
+        </div>
+        <div class="input-group">
+          <label for="email" class="input-label">Email</label>
+          <input id="email" name="email" type="text" class="input" />
+        </div>
+        <div class="input-group">
+          <label for="message" class="input-label">Сообщение</label>
+          <textarea
+            id="message"
+            name="message"
+            type="text"
+            class="input textarea"
+            cols="30"
+            rows="30"
+          ></textarea>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="submit-button" download>
+            <img src="img/icons/send.svg" alt="send-icon" class="cv-icon" />
+            <span class="cv-text">Отправить</span>
+          </button>
+        </div>
+      </form>
+    </section>
+    <!-- /.feedback -->
+    <footer class="footer container">
+      <!-- Длинное тире (которое используют в диапазонах лет) — это en dash. -->
+      <p class="footer-text">
+        © 2024&ndash;<span id="year"></span> Анатолий Борисов. Все права
+        защищены.
+      </p>
+    </footer>
   </body>
 </html>
