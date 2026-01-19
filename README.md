@@ -9,15 +9,13 @@
 ```
 landing/
 ├── docker-compose.yml
-├── nginx.conf
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   ├── main.js
-│   └── footer.js
-└── img/
-    └── ...
+├── nginx/
+│   └── default.conf
+└── public/
+    ├── index.html
+    ├── css/
+    ├── js/
+    └── assets/
 ```
 
 ### Запуск
