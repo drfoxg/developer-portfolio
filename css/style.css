@@ -366,6 +366,15 @@
         margin-top: 40px;
     }
 
+    .skills .tags {
+        flex-wrap: wrap;
+    }
+
+    .skills .tags li {
+        white-space: nowrap;
+        flex: 0 1 auto;
+    }
+
     .skills-title+.tags {
         margin-top: 12px;
     }
@@ -409,6 +418,10 @@
         width: 435px;
         height: 56px;
         padding: 8px;
+    }
+
+    .input::placeholder {
+        color: var(--brand-100);
     }
 
     .textarea {

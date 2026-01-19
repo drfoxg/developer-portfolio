@@ -1,38 +1,68 @@
 "use strict";
 
-const ajaxSend = async (formData) => {
-  // создаем функцию отправки формы
-  const fetchResp = await fetch("telegram.php", {
-    // указываем обработчик формы — telegram.php
-    method: "POST", // метод, которым мы отправляем форму
-    body: formData, // что будет внутри формы — содержимое input
+/**
+ * URL API (Laravel backend)
+ */
+const API_URL = "https://blog.sulfurfun.ru";
+
+/**
+ * Отправка формы через Laravel API
+ */
+const sendFeedback = async (formData) => {
+  const response = await fetch(`${API_URL}/api/feedback`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "X-Requested-With": "XMLHttpRequest",
+    },
+    body: JSON.stringify(Object.fromEntries(formData)),
   });
-  if (!fetchResp.ok) {
-    // если ошибка, то...
-    throw new Error(
-      `Ошибка по адресу ${url}, статус ошибки ${fetchResp.status}`,
-    ); // выводим статус ошибки и текст
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    // Обработка ошибок валидации (422)
+    if (response.status === 422 && data.errors) {
+      const errorMessages = Object.values(data.errors).flat().join("\n");
+      throw new Error(errorMessages);
+    }
+    throw new Error(data.message || "Ошибка отправки");
   }
-  return await fetchResp.text(); // если все хорошо, возвращаем ответ сервера
+
+  return data;
 };
 
-const forms = document.querySelectorAll("form"); // находим все теги form
-forms.forEach((form) => {
-  // для каждой формы...
-  form.addEventListener("submit", function (e) {
-    // отслеживаем событие отправки
-    e.preventDefault(); // отменить стандартную отправку формы
-    const formData = new FormData(this); // собираем все данные из формы
-    console.log(formData);
+// Обработка форм
+const forms = document.querySelectorAll("form");
 
-    ajaxSend(formData) // передаем данные из формы в обработчик
-      .then((response) => {
-        // если все успешно, то..
-        this.innerHTML =
-          "Спасибо,<br> заявку получили"; /* окно благодарности */
-        form.reset(); /*  очищаем поля формы */
-      })
-      .catch((err) => console.error(err)); /* если ошибка, выводим в консоль */
+forms.forEach((form) => {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+
+    // Блокируем кнопку
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "<span>Отправка...</span>";
+
+    try {
+      const formData = new FormData(this);
+      await sendFeedback(formData);
+
+      // Успех
+      this.innerHTML =
+        '<p class="success-message">Спасибо!<br>Заявку получили, скоро свяжемся.</p>';
+    } catch (error) {
+      // Ошибка
+      console.error("Ошибка:", error);
+      alert(error.message || "Произошла ошибка. Попробуйте позже.");
+
+      // Восстанавливаем кнопку
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
   });
 });
 
@@ -71,12 +101,12 @@ navLinks.forEach((link) => {
     navLinks.forEach((l) => l.classList.remove("active"));
     this.classList.add("active");
 
-    // Переход к якорю с задержкой 0.5 сек
+    // Переход к якорю с задержкой 0.3 сек
     setTimeout(() => {
       const target = document.querySelector(targetId);
       if (target) {
         target.scrollIntoView({ behavior: "smooth" });
       }
-    }, 500);
+    }, 300);
   });
 });

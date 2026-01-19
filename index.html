@@ -298,15 +298,15 @@
         <span class="developer-hello">Рад вас видеть</span>
         <h2 class="developer-title">Я Анатолий Борисов</h2>
         <p class="developer-text">
-          Я разрабатываю сайты для людей и компаний. Делаю почти всё сам:
-          составляю прототип, дизайн-макет от проверенного дизайнера или бережно
-          работаю с вашим, пишу код, масштабирую проект под нагрузку.
+          Я разрабатываю сайты для людей и компаний. Фокусируюсь на том, что
+          умею лучше всего: чистый код, надёжный backend, быстрый деплой. Дизайн
+          беру от проверенных дизайнеров или аккуратно воплощаю ваш макет.
         </p>
         <span class="motto">Код, Администрирование, Обучение</span>
         <p class="developer-text">
           Могу собрать страницу для вашей компании, даже если запускать её нужно
-          уже завтра. Из инструментов есть: Tilda, Laravel, Vue 3, Docker,
-          Kubernetes, Figma, HTML, CSS, JavaScript и Wordpress
+          уже завтра. Из инструментов есть: Tilda, Laravel, Vue 3, PostgreSQL,
+          Docker, Kubernetes, HTML, CSS, JavaScript и Wordpress
         </p>
         <img
           src="img/sign.png"
@@ -332,25 +332,57 @@
         <li class="tags-item"><a href="#" class="tags-link">Vue.js</a></li>
         <li class="tags-item"><a href="#" class="tags-link">Laravel</a></li>
         <li class="tags-item"><a href="#" class="tags-link">PostgreSQL</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">JavaScript</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">Redis</a></li>
         <li class="tags-item"><a href="#" class="tags-link">Docker</a></li>
         <li class="tags-item">
           <a href="#" class="tags-link">Ci/Сd</a>
         </li>
         <li class="tags-item"><a href="#" class="tags-link">Kubernetes</a></li>
+        <li class="tags-item"><a href="#" class="tags-link">RabbitMq</a></li>
       </ul>
     </section>
     <!-- /.skills container -->
     <section class="feedback form-container" id="feedback">
       <h2 class="feedback-title">Готов обсудить проект...</h2>
-      <form action="#" class="feedback-form">
+      <form
+        action="https://blog.sulfurfun.ru/api/feedback"
+        method="POST"
+        class="feedback-form"
+      >
         <div class="input-group">
           <label for="username" class="input-label">Имя</label>
-          <input id="username" name="username" type="text" class="input" />
+          <input
+            id="username"
+            name="username"
+            type="text"
+            class="input"
+            placeholder="Иван Иванов"
+            required
+          />
         </div>
         <div class="input-group">
           <label for="email" class="input-label">Email</label>
-          <input id="email" name="email" type="text" class="input" />
+          <input
+            id="email"
+            name="email"
+            type="text"
+            class="input"
+            placeholder="ivanov@mail.ru"
+            required
+          />
         </div>
+        <div class="input-group">
+          <label for="tg" class="input-label">«Телеграм»</label>
+          <input
+            id="tg"
+            name="tg"
+            type="text"
+            class="input"
+            placeholder="@ivanov"
+          />
+        </div>
+
         <div class="input-group">
           <label for="message" class="input-label">Сообщение</label>
           <textarea
