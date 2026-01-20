@@ -66,79 +66,77 @@ forms.forEach((form) => {
   });
 });
 
-// При скролле (автоматически по секциям)
+// Секции и ссылки
 const sections = document.querySelectorAll("section[id], header[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 
-function setActiveLink() {
-  const center = window.innerHeight / 2; // берём центр экрана
-  let closestSection = null;
-  let minDistance = Infinity;
-
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    const distance = Math.abs(rect.top + rect.height / 2 - center); // расстояние до центра
-    if (distance < minDistance) {
-      minDistance = distance;
-      closestSection = section;
-    }
-  });
-
-  const currentSection = closestSection
-    ? closestSection.getAttribute("id")
-    : sections[0].getAttribute("id");
-
+// Активная ссылка
+function setActiveLink(id) {
   navLinks.forEach((link) => {
-    link.classList.toggle(
-      "active",
-      link.getAttribute("href") === "#" + currentSection,
-    );
+    link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    link.classList.remove("pending"); // снимаем pending
   });
 }
 
-// Обновляем после клика на якорь (для iOS)
+// IntersectionObserver — ЕДИНСТВЕННЫЙ источник истины
+const observerOptions = {
+  root: null,
+  rootMargin: "-20% 0px -70% 0px",
+  threshold: 0,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      setActiveLink(entry.target.id);
+    }
+  });
+}, observerOptions);
+
+sections.forEach((section) => observer.observe(section));
+
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     const targetId = link.getAttribute("href").slice(1);
     const target = document.getElementById(targetId);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      requestAnimationFrame(() => setActiveLink()); // обновляем подсветку после скролла
-    }
-  });
-});
+    if (!target) return;
 
-// Throttle для производительности
-let ticking = false;
-window.addEventListener("scroll", () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      setActiveLink();
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
-
-window.addEventListener("load", setActiveLink);
-
-// Навигация: смена активного пункта меню с задержкой перед переходом
-navLinks.forEach((link) => {
-  link.addEventListener("click", function (e) {
     e.preventDefault();
-    const targetId = this.getAttribute("href");
 
-    // Меняем активный класс
-    navLinks.forEach((l) => l.classList.remove("active"));
-    this.classList.add("active");
+    // HAPTIC
+    hapticLight();
 
-    // Переход к якорю с задержкой 0.3 сек
+    // pending-анимация
+    navLinks.forEach((l) => l.classList.remove("pending"));
+    link.classList.add("pending");
+
     setTimeout(() => {
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }, 300);
   });
 });
+
+// Инициализация при загрузке
+window.addEventListener("load", () => {
+  const firstVisible = Array.from(sections).find((section) => {
+    const rect = section.getBoundingClientRect();
+    return rect.top >= 0 && rect.top < window.innerHeight * 0.5;
+  });
+
+  if (firstVisible) {
+    setActiveLink(firstVisible.id);
+  }
+});
+
+function isiOS() {
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+function hapticLight() {
+  if (isiOS() && navigator.vibrate) {
+    navigator.vibrate(10);
+  }
+}

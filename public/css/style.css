@@ -98,6 +98,15 @@
         font-weight: 700;
     }
 
+    /* Это визуально выглядит как active, но не конфликтует с observer’ом в JS */
+    .nav-link.pending {
+        font-weight: 700;
+    }
+
+    .nav-link.pending::after {
+        width: 100%;
+    }
+
     .header-photo {
         background: #ffffff;
         max-width: 240px;
