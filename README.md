@@ -25,7 +25,7 @@ landing/
 docker compose up -d
 
 # Проверка
-curl http://localhost:8080
+curl http://localhost:80
 
 # Логи
 docker compose logs -f
@@ -36,13 +36,12 @@ docker compose down
 
 ### За Nginx Proxy Manager (NPM)
 
-Порт `8080` закрыт снаружи. NPM проксирует на `landing:80`:
+Порт `80` закрыт снаружи. NPM проксирует на `fullstack-landing:80`, это имя контейнера:
 
 ```yaml
 # docker-compose.yml
 services:
   nginx:
-    # убрать ports: - "8080:80"
     expose:
       - "80"
     networks:
@@ -58,6 +57,16 @@ networks:
 - Domain: `fiontech.ru`
 - Forward: `landing` : `80`
 - SSL: Let's Encrypt
+
+### Настроено подтверждения сайта в Яндекс Вебмастер
+
+Чтобы не засорять корень в publlic добавлено правило в конфиги nginx
+
+```ini
+location = /yandex_abd00ac998b15e9c.html {
+    alias /usr/share/nginx/html/public/yandex_verification/yandex_abd00ac998b15e9c.html;
+}
+```
 
 ### Обновление
 
