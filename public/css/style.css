@@ -78,13 +78,20 @@
         transition: width 0.3s ease;
     }
 
-    .nav-link:hover::after,
+    /* Активный пункт — на всех устройствах */
     .nav-link.active::after {
         width: 100%;
     }
 
-    .nav-link:hover {
-        color: var(--brand-500);
+    /* Hover только для устройств с мышью */
+    @media (hover: hover) {
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-500);
+        }
     }
 
     .nav-link.active {
