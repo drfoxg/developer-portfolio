@@ -71,13 +71,13 @@ const sections = document.querySelectorAll("section[id], header[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 
 function setActiveLink() {
-  const offset = window.innerWidth < 768 ? 50 : 100;
+  const center = window.innerHeight / 2; // берём центр экрана
   let closestSection = null;
   let minDistance = Infinity;
 
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    const distance = Math.abs(rect.top - offset);
+    const distance = Math.abs(rect.top + rect.height / 2 - center); // расстояние до центра
     if (distance < minDistance) {
       minDistance = distance;
       closestSection = section;
@@ -95,6 +95,19 @@ function setActiveLink() {
     );
   });
 }
+
+// Обновляем после клика на якорь (для iOS)
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const targetId = link.getAttribute("href").slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      requestAnimationFrame(() => setActiveLink()); // обновляем подсветку после скролла
+    }
+  });
+});
 
 // Throttle для производительности
 let ticking = false;
