@@ -45,20 +45,26 @@ docker compose down
 # docker-compose.yml
 services:
   nginx:
+    image: nginx:alpine
+    container_name: fullstack-landing
     expose:
       - "80"
     networks:
-      - npm_network
+      - dev-landing-network
+      - nginxproxyman
 
 networks:
-  npm_network:
+  dev-landing-network:
+    driver: bridge
+  nginxproxyman:
     external: true
+    name: nginxproxyman
 ```
 
 В NPM:
 
 - Domain: `fiontech.ru`
-- Forward: `landing` : `80`
+- Forward: `fullstack-landing` : `80`
 - SSL: Let's Encrypt
 
 ### Настроено подтверждения сайта в Яндекс Вебмастер
