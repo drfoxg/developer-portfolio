@@ -2,7 +2,7 @@
 
 ## Автор: Анатолий Борисов
 
-ТГ автора: [@drfoxg](https://t.me/drfoxg)
+ТГ автора: [@drfoxg](https://t.me/drfoxg)  
 Релиз данного сайта: [fiontech.ru](https://fiontech.ru)
 
 ## Деплой лендинга
