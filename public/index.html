@@ -46,6 +46,7 @@
     <script defer src="js/main.js"></script>
 
     <!-- Доп. модули -->
+    <script defer src="js/skills.js"></script>
     <script defer src="js/footer.js"></script>
 
     <!-- Schema.org (JSON-LD) — это не JS-логика. -->
@@ -215,17 +216,13 @@
           <div class="card-text-wrapper">
             <div class="card-title">Мобильное приложение</div>
             <ul class="tags">
+              <li class="tags-item"><span class="tags-label">HTML</span></li>
+              <li class="tags-item"><span class="tags-label">CSS</span></li>
               <li class="tags-item">
-                <a href="#" class="tags-link">HTML</a>
+                <span class="tags-label">JavaScript</span>
               </li>
-              <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
-              <li class="tags-item">
-                <a href="#" class="tags-link">JavaScript</a>
-              </li>
-              <li class="tags-item"><a href="" class="tags-link">Git</a></li>
-              <li class="tags-item">
-                <a href="#" class="tags-link">Vitejs</a>
-              </li>
+              <li class="tags-item"><span class="tags-label">Git</span></li>
+              <li class="tags-item"><span class="tags-label">Vitejs</span></li>
             </ul>
             <p class="card-text">
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
@@ -259,10 +256,8 @@
           <div class="card-text-wrapper">
             <div class="card-title">Одностраничный промо-сайт</div>
             <ul class="tags">
-              <li class="tags-item">
-                <a href="#" class="tags-link">HTML</a>
-              </li>
-              <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
+              <li class="tags-item"><span class="tags-label">HTML</span></li>
+              <li class="tags-item"><span class="tags-label">CSS</span></li>
             </ul>
             <p class="card-text">
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
@@ -325,28 +320,67 @@
     <!-- /.developer container -->
     <section class="skills container" id="skills">
       <h2 class="skills-title">Работаю с разными языками и инструментами</h2>
-      <ul class="tags">
+      <ul class="tags skills-tags">
         <li class="tags-item">
-          <a href="#" class="tags-link">HTML</a>
+          <a href="#" class="tags-link" data-skill="html">HTML</a>
         </li>
-        <li class="tags-item"><a href="#" class="tags-link">CSS</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">TypeScript</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">PHP</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">SQL</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">Wordpress</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">npm</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">Vue.js</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">Laravel</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">PostgreSQL</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">JavaScript</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">Redis</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">Docker</a></li>
         <li class="tags-item">
-          <a href="#" class="tags-link">Ci/Сd</a>
+          <a href="#" class="tags-link" data-skill="css">CSS</a>
         </li>
-        <li class="tags-item"><a href="#" class="tags-link">Kubernetes</a></li>
-        <li class="tags-item"><a href="#" class="tags-link">RabbitMq</a></li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="typescript">TypeScript</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="php">PHP</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="sql">SQL</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="wordpress">Wordpress</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="npm">npm</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="vue">Vue.js</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="laravel">Laravel</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="postgresql">PostgreSQL</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="javascript">JavaScript</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="redis">Redis</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="docker">Docker</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="cicd">CI/CD</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="kubernetes">Kubernetes</a>
+        </li>
+        <li class="tags-item">
+          <a href="#" class="tags-link" data-skill="rabbitmq">RabbitMQ</a>
+        </li>
       </ul>
+
+      <!-- Скрытый блок с описанием -->
+      <div class="skill-details" id="skillDetails">
+        <div class="skill-details-content">
+          <h3 class="skill-details-title" id="skillTitle"></h3>
+          <p class="skill-details-text" id="skillText"></p>
+          <button type="button" class="skill-details-btn" id="skillCloseBtn">
+            Ок
+          </button>
+        </div>
+      </div>
     </section>
     <!-- /.skills container -->
     <section class="feedback form-container" id="feedback">
