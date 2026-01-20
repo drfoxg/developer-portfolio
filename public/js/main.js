@@ -71,28 +71,28 @@ const sections = document.querySelectorAll("section[id], header[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 
 function setActiveLink() {
-  // Адаптивный offset: меньше на мобильных
   const offset = window.innerWidth < 768 ? 50 : 100;
-  let currentSection = "";
+  let closestSection = null;
+  let minDistance = Infinity;
 
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    // Секция считается активной, если её верх выше середины экрана
-    if (rect.top <= offset && rect.bottom > offset) {
-      currentSection = section.getAttribute("id");
+    const distance = Math.abs(rect.top - offset);
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestSection = section;
     }
   });
 
-  // Если ничего не найдено, берём первую секцию
-  if (!currentSection && sections.length) {
-    currentSection = sections[0].getAttribute("id");
-  }
+  const currentSection = closestSection
+    ? closestSection.getAttribute("id")
+    : sections[0].getAttribute("id");
 
   navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + currentSection) {
-      link.classList.add("active");
-    }
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#" + currentSection,
+    );
   });
 }
 
