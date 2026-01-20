@@ -71,14 +71,22 @@ const sections = document.querySelectorAll("section[id], header[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 
 function setActiveLink() {
+  // Адаптивный offset: меньше на мобильных
+  const offset = window.innerWidth < 768 ? 50 : 100;
   let currentSection = "";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) {
+    const rect = section.getBoundingClientRect();
+    // Секция считается активной, если её верх выше середины экрана
+    if (rect.top <= offset && rect.bottom > offset) {
       currentSection = section.getAttribute("id");
     }
   });
+
+  // Если ничего не найдено, берём первую секцию
+  if (!currentSection && sections.length) {
+    currentSection = sections[0].getAttribute("id");
+  }
 
   navLinks.forEach((link) => {
     link.classList.remove("active");
@@ -88,7 +96,18 @@ function setActiveLink() {
   });
 }
 
-window.addEventListener("scroll", setActiveLink);
+// Throttle для производительности
+let ticking = false;
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      setActiveLink();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
 window.addEventListener("load", setActiveLink);
 
 // Навигация: смена активного пункта меню с задержкой перед переходом
