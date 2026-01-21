@@ -1,2 +1,19 @@
+# robots.txt for Borisov Anatoliy portfolio
+# https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Disallow: /case.html
+Disallow: /case
+
+# Block all crawlers from interview preparation materials
+User-agent: Googlebot
+Disallow: /case.html
+
+User-agent: Yandex
+Disallow: /case.html
+
+User-agent: Bingbot
+Disallow: /case.html
+
+# Allow everything else
+Allow: /
