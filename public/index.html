@@ -390,6 +390,13 @@
         method="POST"
         class="feedback-form"
       >
+        <div class="input-company" aria-hidden="true">
+          <input type="text" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- TODO: Timestamp — заполнится через JS -->
+        <!-- <input type="hidden" name="form_started_at" value=""> -->
+
         <div class="input-group">
           <label for="username" class="input-label">Имя</label>
           <input

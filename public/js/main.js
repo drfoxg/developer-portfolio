@@ -9,7 +9,7 @@ const API_URL = "https://blog.sulfurfun.ru";
  * Отправка формы через Laravel API
  */
 const sendFeedback = async (formData) => {
-  const response = await fetch(`${API_URL}/api/feedback`, {
+  const response = await fetch(`${API_URL}/api/v1/feedback`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

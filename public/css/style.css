@@ -450,6 +450,11 @@
         padding: 8px;
     }
 
+    .input-company {
+        position: absolute;
+        left: -9999px
+    }
+
     .input::placeholder {
         color: var(--brand-100);
     }
