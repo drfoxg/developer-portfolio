@@ -1,0 +1,1342 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Кейсы для собеседования — Борисов Анатолий</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <style>
+            /* Case-specific styles */
+            .case {
+                padding: 60px 0;
+            }
+
+            .case-intro {
+                margin-bottom: 48px;
+            }
+
+            .case-intro-text {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 160%;
+                color: var(--neutral-500);
+                margin-top: 8px;
+            }
+
+            .case-item {
+                margin-bottom: 48px;
+                padding-bottom: 48px;
+                border-bottom: 1px solid var(--neutral-100);
+            }
+
+            .case-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .case-question {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 135%;
+                letter-spacing: -0.02em;
+                color: var(--brand-900);
+                margin-bottom: 24px;
+            }
+
+            .case-question-label {
+                font-weight: 400;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: var(--neutral-500);
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .car-section {
+                margin-bottom: 24px;
+            }
+
+            .car-title {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 135%;
+                color: var(--neutral-900);
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .car-title::before {
+                content: "";
+                display: inline-block;
+                width: 4px;
+                height: 20px;
+                background: var(--brand-500);
+                border-radius: 2px;
+            }
+
+            .car-text {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 170%;
+                color: var(--neutral-900);
+            }
+
+            .car-text p {
+                margin: 0 0 12px 0;
+            }
+
+            .car-text p:last-child {
+                margin-bottom: 0;
+            }
+
+            .code-block {
+                background: #f8f8f8;
+                border-left: 4px solid var(--brand-500);
+                padding: 16px 20px;
+                margin: 16px 0;
+                overflow-x: auto;
+                border-radius: 0 4px 4px 0;
+            }
+
+            .code-block pre {
+                margin: 0;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 13px;
+                line-height: 1.5;
+                color: var(--neutral-900);
+            }
+
+            .result-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .result-list li {
+                position: relative;
+                padding-left: 24px;
+                margin-bottom: 8px;
+                font-size: 16px;
+                line-height: 160%;
+                color: var(--neutral-900);
+            }
+
+            .result-list li::before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: var(--brand-900);
+                font-weight: 700;
+            }
+
+            .additional-questions {
+                margin-top: 80px;
+            }
+
+            .additional-questions .section-heading {
+                margin-bottom: 32px;
+            }
+
+            .question-item {
+                margin-bottom: 48px;
+                padding-bottom: 48px;
+                border-bottom: 1px solid var(--neutral-100);
+            }
+
+            .question-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .question-number {
+                font-weight: 700;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: var(--brand-500);
+                margin-bottom: 8px;
+            }
+
+            .question-text {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 140%;
+                color: var(--brand-900);
+                margin-bottom: 20px;
+            }
+
+            .question-answer {
+                font-size: 16px;
+                line-height: 170%;
+                color: var(--neutral-900);
+            }
+
+            .question-answer p {
+                margin: 0 0 12px 0;
+            }
+
+            .question-answer p:last-child {
+                margin-bottom: 0;
+            }
+
+            .comparison-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 16px 0;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 16px;
+                text-align: left;
+                border: 1px solid var(--neutral-100);
+                font-size: 14px;
+            }
+
+            .comparison-table th {
+                background: var(--brand-100);
+                font-weight: 700;
+                color: var(--neutral-900);
+            }
+
+            .comparison-table td {
+                color: var(--neutral-900);
+            }
+
+            .checklist {
+                list-style: none;
+                padding: 0;
+                margin: 16px 0;
+            }
+
+            .checklist li {
+                position: relative;
+                padding-left: 28px;
+                margin-bottom: 8px;
+                font-size: 15px;
+                line-height: 160%;
+            }
+
+            .checklist li::before {
+                content: "→";
+                position: absolute;
+                left: 0;
+                color: var(--brand-500);
+                font-weight: 700;
+            }
+
+            .section-subtitle {
+                font-weight: 700;
+                font-size: 16px;
+                color: var(--neutral-900);
+                margin: 16px 0 8px 0;
+            }
+
+            @media (max-width: 790px) {
+                .case {
+                    padding: 40px 0;
+                }
+
+                .case-question,
+                .question-text {
+                    font-size: 20px;
+                }
+
+                .code-block {
+                    padding: 12px 16px;
+                }
+
+                .code-block pre {
+                    font-size: 11px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="case container" id="case">
+            <!-- Кейс 1 -->
+            <article class="case-item">
+                <div class="case-question">
+                    <span class="case-question-label"
+                        >Кейс 1: Миграция legacy-кода</span
+                    >
+                    «Случай, когда мне приходилось переносить устаревший проект
+                    на современный стек.»
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Context</h3>
+                    <div class="car-text">
+                        <p>
+                            Сервис анкетирования для новостного сайта работал на
+                            PHP 5.5 с очередями на Oracle 11. Система
+                            обрабатывала ~10 000 анкет в сутки, мониторинг
+                            отсутствовал, любое изменение требовало ручного
+                            тестирования на проде.
+                        </p>
+                        <p>
+                            Любая найденная уязвимость — это навсегда
+                            уязвимость, медленный интерпретатор, а значит больше
+                            CPU, больше денег за сервера. Приходилось
+                            поддерживать старую OS, в которой нормально
+                            собирался PHP 5.5.
+                        </p>
+                        <p>
+                            «Хорошо работает» ≠ «безопасно, поддерживаемо и
+                            масштабируемо». Новые разработчики не хотят работать
+                            с PHP 5.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Action</h3>
+                    <div class="car-text">
+                        <p>
+                            Начал с reverse engineering существующей системы —
+                            восстановил схему данных и бизнес-логику, которая
+                            была размазана по процедурам Oracle и PHP-коду без
+                            чёткого разделения.
+                        </p>
+                        <p>
+                            Архитектуру новой системы построил на принципе
+                            разделения ответственности:
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│   HTTP Layer    │────▶│  Service Layer   │────▶│  Repository     │
+│   Controllers   │     │  Business Logic  │     │  Eloquent ORM   │
+└─────────────────┘     └──────────────────┘     └─────────────────┘
+                               │
+                               ▼
+                        ┌──────────────────┐
+                        │   Queue Jobs     │
+                        │  Laravel Queue   │
+                        └──────────────────┘</pre
+                            >
+                        </div>
+
+                        <p>
+                            Для очередей вместо кастомного решения на Oracle
+                            выбрал Laravel Queue с драйвером Redis — это дало из
+                            коробки retry-политики, failed jobs таблицу и
+                            мониторинг через Horizon.
+                        </p>
+                        <p>
+                            Миграцию данных разбил на этапы: сначала перенёс
+                            справочники, затем исторические данные батчами по 10
+                            000 записей с валидацией через checksum. Написал
+                            консольные команды для сверки данных между старой и
+                            новой системой.
+                        </p>
+                        <p>
+                            Критичные участки покрыл Feature-тестами — особенно
+                            логику подсчёта результатов анкетирования, где
+                            раньше периодически возникали расхождения.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Result</h3>
+                    <ul class="result-list">
+                        <li>
+                            Время onboarding новых разработчиков сократилось с
+                            2-3 недель до 3-4 дней
+                        </li>
+                        <li>Количество инцидентов снизилось на ~70%</li>
+                        <li>
+                            Появился мониторинг очередей — теперь видно, если
+                            что-то зависает
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Кейс 2 -->
+            <article class="case-item">
+                <div class="case-question">
+                    <span class="case-question-label"
+                        >Кейс 2: Оптимизация производительности</span
+                    >
+                    «Пример, когда я значительно улучшили производительность
+                    системы.»
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Context</h3>
+                    <div class="car-text">
+                        <p>
+                            CRM-система для геодезической компании на самописном
+                            PHP 5.x. Страницы финансовой отчётности
+                            генерировались 3-5 минут. База — около 500 000
+                            договоров с историей этапов и платежей за несколько
+                            лет.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Action</h3>
+                    <div class="car-text">
+                        <p>
+                            Первым делом включил логирование медленных запросов
+                            в MySQL (slow_query_log). Обнаружил несколько
+                            проблем:
+                        </p>
+                        <p>
+                            <strong>1. N+1 на уровне архитектуры</strong> — для
+                            каждого договора делался отдельный запрос на этапы,
+                            для каждого этапа — на платежи. На странице с 500
+                            договорами это давало 1500+ запросов.
+                        </p>
+                        <p>
+                            <strong>2. Отсутствие индексов</strong> — поля
+                            contract_id, stage_id, created_at не были
+                            проиндексированы, хотя использовались в WHERE и
+                            JOIN.
+                        </p>
+                        <p>
+                            <strong>3. Агрегации на лету</strong> — суммы по
+                            финансовым операциям считались каждый раз при
+                            загрузке страницы.
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+-- Добавил составные индексы
+CREATE INDEX idx_payments_contract_date ON payments(contract_id, created_at);
+CREATE INDEX idx_stages_contract_status ON stages(contract_id, status);
+
+-- Денормализовал агрегаты в отдельную таблицу
+CREATE TABLE contract_summaries (
+    contract_id INT PRIMARY KEY,
+    total_paid DECIMAL(15,2),
+    stages_count INT,
+    last_payment_date DATE,
+    updated_at TIMESTAMP
+);</pre
+                            >
+                        </div>
+
+                        <p>
+                            Для поддержания консистентности агрегатов написал
+                            триггеры на INSERT/UPDATE в таблицах платежей.
+                            Переписал тяжёлые запросы — вместо подзапросов
+                            использовал JOIN с предрасчитанными данными.
+                        </p>
+                        <p>
+                            На уровне PHP заменил циклы с запросами на
+                            batch-выборки с группировкой результатов в памяти.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Result</h3>
+                    <ul class="result-list">
+                        <li>
+                            Время генерации страниц сократилось с минут до 10-30
+                            секунд — примерно в 10-15 раз
+                        </li>
+                        <li>Нагрузка на MySQL упала</li>
+                        <li>
+                            Сотрудники вернулись к работе с разделами, которые
+                            раньше избегали
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Кейс 3 -->
+            <article class="case-item">
+                <div class="case-question">
+                    <span class="case-question-label"
+                        >Кейс 3: Проектирование системы с нуля</span
+                    >
+                    «Проект, который я разрабатывал с нуля.»
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Context</h3>
+                    <div class="car-text">
+                        <p>
+                            Компания «Теллур Электроникс» торгует
+                            радиоэлектронными компонентами. Менеджеры тратили
+                            часы на ручной поиск аналогов по разным сайтам и
+                            прайсам партнёров. Нужен был единый сервис для
+                            подбора компонентов и быстрого формирования КП.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Action</h3>
+                    <div class="car-text">
+                        <p>
+                            Начал с проектирования схемы данных. Основная
+                            сложность — 9 млн товарных позиций с десятками
+                            параметров (ёмкость, напряжение, корпус,
+                            производитель и т.д.).
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                        Application Layer                        │
+├─────────────────┬─────────────────┬─────────────────────────────┤
+│   Web UI        │   Import/Export │   Partner API Integration   │
+│   Blade+Tailwind│   Excel/CSV     │   Async Jobs                │
+└────────┬────────┴────────┬────────┴──────────────┬──────────────┘
+         │                 │                       │
+         ▼                 ▼                       ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                       Service Layer                             │
+│  ProductService │ AnalogService │ PriceService │ PartnerService │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Data Layer (MySQL 20GB)                      │
+└─────────────────────────────────────────────────────────────────┘</pre
+                            >
+                        </div>
+
+                        <p>
+                            Для поиска аналогов спроектировал связующую таблицу
+                            с весами совпадения — не все аналоги равноценны,
+                            важно показывать степень совместимости.
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+class AnalogService
+{
+    public function findAnalogs(string $partNumber): Collection
+    {
+        return $this->analogRepository
+            ->getByPartNumber($partNumber)
+            ->sortByDesc('compatibility_score')
+            ->groupBy('manufacturer');
+    }
+}</pre
+                            >
+                        </div>
+
+                        <p>
+                            Интеграцию с партнёрами вынес в очереди — при
+                            запросе цены джоба опрашивает API партнёров
+                            параллельно, результаты кэшируются на 15 минут.
+                        </p>
+                        <p>
+                            Для фильтрации по параметрам использовал EAV-модель
+                            (Entity-Attribute-Value), но с оптимизацией — часто
+                            используемые параметры вынес в колонки основной
+                            таблицы.
+                        </p>
+                        <p>
+                            Импорт больших Excel-файлов (100 000+ строк) сделал
+                            через chunk-обработку с прогресс-баром и
+                            возможностью продолжить после сбоя.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Result</h3>
+                    <div class="car-text">
+                        <p>
+                            Скорость обработки входящих заявок увеличилась в 3
+                            раза. Сервис стал основным инструментом отдела
+                            продаж —
+                            <a
+                                href="https://tellur-el.ru/"
+                                target="_blank"
+                                rel="noopener"
+                                >https://tellur-el.ru/</a
+                            >. Заложенная архитектура позволила легко добавлять
+                            новых партнёров.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Кейс 4 -->
+            <article class="case-item">
+                <div class="case-question">
+                    <span class="case-question-label"
+                        >Кейс 4: Работа с правами доступа и безопасностью</span
+                    >
+                    «Как я реализовывал систему прав и ролей в проекте»
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Context</h3>
+                    <div class="car-text">
+                        <p>
+                            Сервис видео-встреч с AI-распознаванием речи.
+                            Иерархия доступа: платформа → организации → команды
+                            → пользователи. Нужно было разграничить доступ к
+                            видео-карточкам с учётом того, что одна карточка
+                            может быть расшарена между организациями.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Action</h3>
+                    <div class="car-text">
+                        <p>
+                            Выбрал spatie/laravel-permission v6, но стандартной
+                            модели ролей было недостаточно — требовалась
+                            привязка к контексту (организации).
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                     Permission Hierarchy                        │
+├─────────────────────────────────────────────────────────────────┤
+│  Platform Level    │  super-admin (полный доступ ко всему)      │
+├────────────────────┼────────────────────────────────────────────┤
+│  Organization Level│  org-admin, org-member                     │
+├────────────────────┼────────────────────────────────────────────┤
+│  Resource Level    │  video:view, video:edit, video:share       │
+└────────────────────┴────────────────────────────────────────────┘</pre
+                            >
+                        </div>
+
+                        <p>
+                            Для проверки доступа к конкретной карточке создал
+                            Policy с каскадной логикой:
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+class VideoCardPolicy
+{
+    public function view(User $user, VideoCard $card): bool
+    {
+        // 1. Супер-админ видит всё
+        if ($user->hasRole('super-admin')) {
+            return true;
+        }
+        
+        // 2. Владелец карточки
+        if ($card->owner_id === $user->id) {
+            return true;
+        }
+        
+        // 3. Проверка через sharing
+        return $this->sharingService->hasAccess($user, $card);
+    }
+}</pre
+                            >
+                        </div>
+
+                        <p>
+                            Функционал «Поделиться карточкой» реализовал через
+                            полиморфную связь — можно расшарить на пользователя,
+                            группу или роль. API для приглашений по email
+                            включал защиту от перебора — rate limiting и
+                            подтверждение через токен с ограниченным сроком
+                            жизни.
+                        </p>
+                        <p>
+                            Написал ~50 Unit-тестов, покрывающих граничные
+                            случаи: пользователь удалён из группы, роль
+                            отозвана, карточка перенесена в другую организацию.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Result</h3>
+                    <div class="car-text">
+                        <p>
+                            Система гибко масштабируется — за время работы
+                            добавили 3 новых роли без изменения кода.
+                            Security-аудит не выявил уязвимостей в логике
+                            доступа.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Кейс 5 -->
+            <article class="case-item">
+                <div class="case-question">
+                    <span class="case-question-label"
+                        >Кейс 5: Работа в условиях неопределённости /
+                        инициатива</span
+                    >
+                    «Случай, когда я проявили инициативу.»
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Context</h3>
+                    <div class="car-text">
+                        <p>
+                            В компании «Теллур Электроникс» не было опыта
+                            веб-разработки: код хранился в zip-архивах на
+                            сетевом диске, задачи обсуждались в чатах, локальное
+                            окружение каждый настраивал вручную — у всех разные
+                            версии PHP и MySQL.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Action</h3>
+                    <div class="car-text">
+                        <p>
+                            Предложил руководству внедрить базовые
+                            DevOps-практики. Составил план, который не требовал
+                            больших затрат:
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                    Development Infrastructure                   │
+├─────────────────────────────────────────────────────────────────┤
+│   ┌──────────┐    ┌──────────┐    ┌──────────────────────┐     │
+│   │  Gitea   │───▶│ Kanboard │───▶│  Docker Environment  │     │
+│   │  (Git)   │    │ (Tasks)  │    │  (Local Dev)         │     │
+│   └──────────┘    └──────────┘    └──────────────────────┘     │
+└─────────────────────────────────────────────────────────────────┘</pre
+                            >
+                        </div>
+
+                        <p>
+                            Выбрал self-hosted решения (Gitea вместо GitLab —
+                            легче, Kanboard вместо Jira — проще), чтобы
+                            минимизировать порог входа для команды.
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+services:
+  app:
+    build: .
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: app</pre
+                            >
+                        </div>
+
+                        <p>
+                            Написал README с пошаговой инструкцией: клонировать
+                            репозиторий, запустить docker-compose up, открыть
+                            localhost. Провёл демо для коллег, ответил на
+                            вопросы. Дополнительно настроил git-хуки для
+                            проверки code style перед коммитом.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="car-section">
+                    <h3 class="car-title">Result</h3>
+                    <ul class="result-list">
+                        <li>
+                            Команда перешла на версионный контроль за неделю
+                        </li>
+                        <li>
+                            Время развёртывания среды сократилось с дней до 15
+                            минут
+                        </li>
+                        <li>Руководство видит статус задач в Kanboard</li>
+                        <li>
+                            Инфраструктура используется для всех последующих
+                            проектов компании
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Дополнительные вопросы -->
+            <div class="additional-questions">
+                <h2 class="section-heading">Дополнительно</h2>
+
+                <!-- Вопрос 6 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Почему выбрали Laravel, а не Symfony?»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            При миграции сервиса анкетирования и разработке
+                            новых проектов стоял выбор между Laravel и Symfony.
+                            Провёл сравнительный анализ под конкретные задачи:
+                        </p>
+
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Критерий</th>
+                                    <th>Laravel</th>
+                                    <th>Symfony</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Скорость разработки MVP</td>
+                                    <td>Выше (conventions)</td>
+                                    <td>Ниже (конфигурация)</td>
+                                </tr>
+                                <tr>
+                                    <td>Eloquent vs Doctrine</td>
+                                    <td>Проще для CRUD</td>
+                                    <td>Мощнее для сложных моделей</td>
+                                </tr>
+                                <tr>
+                                    <td>Экосистема пакетов</td>
+                                    <td>Horizon, Sanctum, Spatie</td>
+                                    <td>Flex, бандлы</td>
+                                </tr>
+                                <tr>
+                                    <td>Порог входа для команды</td>
+                                    <td>Ниже</td>
+                                    <td>Выше</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            Для проектов с плотными сроками и командой разного
+                            уровня выбрал Laravel — меньше boilerplate, быстрее
+                            результат. Laravel позволил запустить MVP сервиса
+                            видео-встреч за 2 месяца.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 7 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Как я проводили Code Review»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            В команде из 3-4 разработчиков нужно было
+                            поддерживать качество кода без избыточной
+                            бюрократии. Сформировал чек-лист для ревью:
+                        </p>
+
+                        <ul class="checklist">
+                            <li>
+                                <strong>Безопасность</strong> — SQL-инъекции,
+                                XSS, проверка прав доступа
+                            </li>
+                            <li>
+                                <strong>Читаемость</strong> — понятные имена,
+                                отсутствие магических чисел
+                            </li>
+                            <li>
+                                <strong>Тесты</strong> — критичная логика
+                                покрыта
+                            </li>
+                            <li>
+                                <strong>Архитектура</strong> — соответствие
+                                принятым паттернам (Repository, Service)
+                            </li>
+                            <li>
+                                <strong>Performance</strong> — нет N+1, тяжёлые
+                                операции в очередях
+                            </li>
+                        </ul>
+
+                        <p>
+                            В Gitea настроил protected branches — merge в main
+                            только через Pull Request с одним approve.
+                            Количество багов на проде снизилось, новые
+                            разработчики быстрее понимали стандарты команды.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 8 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Сложный баг, который долго искали.»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            В CRM «Руководитель» рекурсивный алгоритм построения
+                            иерархии задач иногда уходил в бесконечный цикл, но
+                            только на определённых данных.
+                        </p>
+
+                        <p>
+                            Воспроизвёл проблему локально с дампом
+                            продакшен-данных. Настроил xdebug с conditional
+                            breakpoints — останавливался только при глубине
+                            рекурсии > 50.
+                        </p>
+
+                        <p>
+                            Обнаружил, что в данных была циклическая
+                            зависимость: задача A → B → C → A. Это невалидное
+                            состояние, но UI позволял его создать.
+                        </p>
+
+                        <p>Исправил на двух уровнях:</p>
+                        <ul class="checklist">
+                            <li>
+                                Добавил проверку при сохранении — нельзя указать
+                                parent, который создаёт цикл
+                            </li>
+                            <li>
+                                В алгоритме добавил visited set для защиты от
+                                циклов
+                            </li>
+                        </ul>
+
+                        <p>
+                            Время отладки — около 4 часов, из которых 3 ушло на
+                            воспроизведение.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 9 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Работала с очередями (RabbitMQ/Redis)»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            В сервисе видео-встреч обработка загруженных видео
+                            (транскодирование, распознавание речи) занимала
+                            минуты — нельзя было делать синхронно. Спроектировал
+                            pipeline из очередей:
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+Upload → [Queue: process-video] → Kaltura API → [Queue: transcribe] → AI Service → [Queue: index] → Elasticsearch</pre
+                            >
+                        </div>
+
+                        <p>Для каждого этапа настроил:</p>
+                        <ul class="checklist">
+                            <li>
+                                <strong>Retry policy</strong> — 3 попытки с
+                                exponential backoff
+                            </li>
+                            <li>
+                                <strong>Dead letter queue</strong> — failed jobs
+                                не теряются
+                            </li>
+                            <li>
+                                <strong>Таймауты</strong> — защита от зависания
+                            </li>
+                        </ul>
+
+                        <p>
+                            Мониторинг через Laravel Horizon — видно длину
+                            очередей, throughput, failed jobs.
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+class TranscribeVideoJob implements ShouldQueue
+{
+    public $tries = 3;
+    public $backoff = [60, 300, 900]; // 1 мин, 5 мин, 15 мин
+    
+    public function handle(TranscriptionService $service): void
+    {
+        $service->transcribe($this->videoId);
+    }
+}</pre
+                            >
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Вопрос 10 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Обеспечивал поиск по большим объёмам данных»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            В сервисе видео-встреч нужен был нечёткий поиск по
+                            субтитрам — пользователь вводит фразу, система
+                            находит момент в видео, где это было сказано.
+                        </p>
+
+                        <p>
+                            Kaltura предоставляет Elasticsearch для индексации
+                            субтитров. Реализовал API-метод с использованием
+                            fuzzy matching:
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+public function searchSubtitles(string $query): array
+{
+    return $this->kalturaClient->search([
+        'query' => [
+            'multi_match' => [
+                'query' => $query,
+                'fields' => ['caption_text'],
+                'fuzziness' => 'AUTO',
+            ]
+        ],
+        'highlight' => [
+            'fields' => ['caption_text' => new \stdClass()]
+        ]
+    ]);
+}</pre
+                            >
+                        </div>
+
+                        <p>
+                            Результаты включают timestamp — можно перейти к
+                            конкретному моменту видео. Пользователи находят
+                            нужные фрагменты за секунды вместо ручного просмотра
+                            часовых записей. Нечёткий поиск прощает опечатки и
+                            вариации произношения.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 11 -->
+                <article class="question-item">
+                    <div class="question-text">«Документировал API»</div>
+                    <div class="question-answer">
+                        <p>
+                            API сервиса видео-встреч использовался
+                            фронтенд-командой и внешними интеграторами. Выбрал
+                            подход «документация как код» — OpenAPI-спецификация
+                            генерируется из аннотаций в коде:
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+/**
+ * @OA\Post(
+ *     path="/api/video-cards/{id}/share",
+ *     summary="Поделиться карточкой",
+ *     @OA\Parameter(name="id", in="path", required=true),
+ *     @OA\RequestBody(
+ *         @OA\JsonContent(
+ *             @OA\Property(property="email", type="string"),
+ *             @OA\Property(property="permission", type="string", enum={"view", "edit"})
+ *         )
+ *     ),
+ *     @OA\Response(response=200, description="Success")
+ * )
+ */
+public function share(ShareRequest $request, VideoCard $card): JsonResponse</pre
+                            >
+                        </div>
+
+                        <p>
+                            Swagger UI доступен на /api/docs — можно тестировать
+                            эндпоинты прямо из браузера. Фронтенд-команда
+                            работает автономно, не дёргая бэкенд по каждому
+                            вопросу. Документация всегда актуальна, потому что
+                            генерируется из кода.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 12 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Масштабировал систему при росте нагрузки»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            Сервис подбора аналогов компонентов (Теллур) начал
+                            тормозить при росте базы до 9 млн позиций и
+                            увеличении числа пользователей. Применил несколько
+                            уровней оптимизации:
+                        </p>
+
+                        <p class="section-subtitle">Уровень БД:</p>
+                        <ul class="checklist">
+                            <li>
+                                Партиционирование таблицы products по
+                                manufacturer
+                            </li>
+                            <li>
+                                Добавление covering indexes для частых запросов
+                            </li>
+                            <li>Read replicas для отчётов</li>
+                        </ul>
+
+                        <p class="section-subtitle">Уровень приложения:</p>
+                        <ul class="checklist">
+                            <li>
+                                Redis-кэш для справочников (категории,
+                                производители) — TTL 1 час
+                            </li>
+                            <li>
+                                Кэширование результатов поиска аналогов — TTL 15
+                                минут
+                            </li>
+                            <li>
+                                Cursor-based pagination вместо offset для
+                                глубоких страниц
+                            </li>
+                        </ul>
+
+                        <div class="code-block">
+                            <pre>
+// Cursor-based pagination для больших таблиц
+$products = Product::where('id', '>', $cursor)
+    ->orderBy('id')
+    ->limit(50)
+    ->get();</pre
+                            >
+                        </div>
+
+                        <p class="section-subtitle">Уровень инфраструктуры:</p>
+                        <ul class="checklist">
+                            <li>Вынес обработку импорта в отдельный воркер</li>
+                            <li>
+                                Настроил очереди с приоритетами — UI-запросы
+                                важнее фоновых задач
+                            </li>
+                        </ul>
+
+                        <p>
+                            Система держит нагрузку без деградации
+                            производительности. Время отклика API стабильно
+                            &lt;200ms для 95-го перцентиля.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 13 -->
+                <article class="question-item">
+                    <div class="question-text">«Работа с внешними API.»</div>
+                    <div class="question-answer">
+                        <p>
+                            Интеграция с поставщиком речных круизов — их API
+                            возвращал данные в нестандартном XML-формате,
+                            документация была неполной. Создал изолированный
+                            integration layer:
+                        </p>
+
+                        <div class="code-block">
+                            <pre>
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│   Our System    │────▶│  Cruise Adapter  │────▶│  Partner API    │
+│                 │     │  (transforms)    │     │  (XML)          │
+└─────────────────┘     └──────────────────┘     └─────────────────┘</pre
+                            >
+                        </div>
+
+                        <p>Adapter отвечал за:</p>
+                        <ul class="checklist">
+                            <li>Преобразование XML → внутренние DTO</li>
+                            <li>Retry при таймаутах (3 попытки)</li>
+                            <li>Логирование запросов/ответов для отладки</li>
+                            <li>
+                                Circuit breaker — при 5 ошибках подряд перестаём
+                                дёргать API на 5 минут
+                            </li>
+                        </ul>
+
+                        <div class="code-block">
+                            <pre>
+class CruiseApiAdapter
+{
+    public function getCruises(DateRange $dates): Collection
+    {
+        $response = $this->client->get('/cruises', [
+            'timeout' => 30,
+            'query' => ['from' => $dates->start, 'to' => $dates->end]
+        ]);
+        
+        return $this->transformer->fromXml($response->body());
+    }
+}</pre
+                            >
+                        </div>
+
+                        <p>
+                            При сбоях система gracefully degraded — показывает
+                            кэшированные данные с пометкой о времени обновления.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 14 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Обеспечение безопасности приложения»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            Муниципальный портал госуслуг обрабатывал
+                            персональные данные граждан — требования к
+                            безопасности были высокими. Реализовал защиту на
+                            нескольких уровнях:
+                        </p>
+
+                        <p class="section-subtitle">Входные данные:</p>
+                        <ul class="checklist">
+                            <li>
+                                Валидация через FormRequest с whitelist-подходом
+                            </li>
+                            <li>
+                                Prepared statements для всех запросов (Eloquent
+                                делает это по умолчанию)
+                            </li>
+                            <li>
+                                Экранирование вывода через Blade
+                                <code>{{ }}</code> вместо
+                                <code>{!! !!}</code>
+                            </li>
+                        </ul>
+
+                        <p class="section-subtitle">Аутентификация:</p>
+                        <ul class="checklist">
+                            <li>
+                                Защита от brute-force — rate limiting на login
+                                endpoint
+                            </li>
+                            <li>
+                                Двухфакторная аутентификация для
+                                административных ролей
+                            </li>
+                            <li>Токены с ограниченным сроком жизни</li>
+                        </ul>
+
+                        <p class="section-subtitle">Инфраструктура:</p>
+                        <ul class="checklist">
+                            <li>HTTPS everywhere</li>
+                            <li>Security headers (CSP, X-Frame-Options)</li>
+                            <li>
+                                Регулярное обновление зависимостей, мониторинг
+                                CVE
+                            </li>
+                        </ul>
+
+                        <p class="section-subtitle">Аудит:</p>
+                        <ul class="checklist">
+                            <li>
+                                Логирование всех действий с персональными
+                                данными
+                            </li>
+                            <li>
+                                Отдельная таблица audit_log с immutable записями
+                            </li>
+                        </ul>
+
+                        <p>
+                            Система прошла проверку на соответствие требованиям
+                            безопасности. За время эксплуатации инцидентов с
+                            утечкой данных не было.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Вопрос 15 -->
+                <article class="question-item">
+                    <div class="question-text">
+                        «Работа с базой данных в высоконагруженном проекте»
+                    </div>
+                    <div class="question-answer">
+                        <p>
+                            Онлайн-сервис продажи билетов с базой PostgreSQL на
+                            несколько гигабайт, пиковые нагрузки в дни крупных
+                            мероприятий. Оптимизировал работу с БД:
+                        </p>
+
+                        <p class="section-subtitle">Структура запросов:</p>
+                        <ul class="checklist">
+                            <li>
+                                Анализ через <code>EXPLAIN ANALYZE</code> для
+                                всех тяжёлых запросов
+                            </li>
+                            <li>Замена подзапросов на JOIN где возможно</li>
+                            <li>
+                                Использование CTE (Common Table Expressions) для
+                                сложных отчётов
+                            </li>
+                        </ul>
+
+                        <p class="section-subtitle">Индексирование:</p>
+                        <div class="code-block">
+                            <pre>
+-- Partial index для активных билетов
+CREATE INDEX idx_tickets_active ON tickets(event_id, status) 
+WHERE status = 'active';
+
+-- GiST index для полнотекстового поиска
+CREATE INDEX idx_events_search ON events USING GiST(to_tsvector('russian', name));</pre
+                            >
+                        </div>
+
+                        <p class="section-subtitle">Кэширование:</p>
+                        <ul class="checklist">
+                            <li>
+                                Redis для сессий и hot data (остатки билетов)
+                            </li>
+                            <li>Инвалидация кэша через события при продаже</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <pre>
+// Пример работы с кэшем остатков
+public function getAvailableTickets(int $eventId): int
+{
+    return Cache::remember(
+        "tickets:available:{$eventId}",
+        now()->addMinutes(1),
+        fn() => $this->ticketRepository->countAvailable($eventId)
+    );
+}</pre
+                            >
+                        </div>
+
+                        <p class="section-subtitle">Отчёты:</p>
+                        <ul class="checklist">
+                            <li>Materialized views для тяжёлых агрегаций</li>
+                            <li>
+                                Обновление по расписанию в часы низкой нагрузки
+                            </li>
+                        </ul>
+
+                        <p>
+                            Разработал три отчёта (HTML и Excel форматы),
+                            которые генерируются за секунды вместо минут.
+                            Система выдерживает пиковые нагрузки в дни продаж.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer class="footer container">
+            Борисов Анатолий — PHP-разработчик
+        </footer>
+    </body>
+</html>
