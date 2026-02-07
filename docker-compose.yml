@@ -1,20 +1,46 @@
 services:
-  nginx:
-    image: nginx:alpine
-    container_name: fullstack-landing
-    restart: unless-stopped
-    expose:
-      - "80"
-    volumes:
-      - ./:/usr/share/nginx/html:ro
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-    networks:
-      - dev-landing-network
-      - nginxproxyman
+    nginx:
+        image: nginx:alpine
+        container_name: fullstack-landing
+        restart: unless-stopped
+        expose:
+            - "80"
+        volumes:
+            - ./public:/usr/share/nginx/html:ro
+            - ./nginx/fiontech.ru/default.conf:/etc/nginx/conf.d/default.conf:ro
+        networks:
+            - dev-landing-network
+            - nginxproxyman
+
+    nginx-1:
+        image: nginx:alpine
+        container_name: anime
+        restart: unless-stopped
+        expose:
+            - "80"
+        volumes:
+            - ./public:/usr/share/nginx/html:ro
+            - ./nginx/anime.sulfurfun.ru/default.conf:/etc/nginx/conf.d/default.conf:ro
+        networks:
+            - dev-landing-network
+            - nginxproxyman
+
+    nginx-2:
+        image: nginx:alpine
+        container_name: h500
+        restart: unless-stopped
+        expose:
+            - "80"
+        volumes:
+            - ./public:/usr/share/nginx/html:ro
+            - ./nginx/h500.sulfurfun.ru/default.conf:/etc/nginx/conf.d/default.conf:ro
+        networks:
+            - dev-landing-network
+            - nginxproxyman
 
 networks:
-  dev-landing-network:
-    driver: bridge
-  nginxproxyman:
-    external: true
-    name: nginxproxyman
+    dev-landing-network:
+        driver: bridge
+    nginxproxyman:
+        external: true
+        name: nginxproxyman
