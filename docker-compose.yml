@@ -38,6 +38,19 @@ services:
             - dev-landing-network
             - nginxproxyman
 
+    nginx-3:
+        image: nginx:alpine
+        container_name: cars
+        restart: unless-stopped
+        expose:
+            - "80"
+        volumes:
+            - ./public/cars.fiontech.ru:/usr/share/nginx/html:ro
+            - ./nginx/cars.fiontech.ru/default.conf:/etc/nginx/conf.d/default.conf:ro
+        networks:
+            - dev-landing-network
+            - nginxproxyman
+
 networks:
     dev-landing-network:
         driver: bridge
